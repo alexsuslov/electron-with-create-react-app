@@ -19,6 +19,7 @@ const Component = props => {
         <th>Range</th>
         <th>type</th>
         <th>Description</th>
+        <th>Group</th>
         </tr>
       </thead>
       <tbody>

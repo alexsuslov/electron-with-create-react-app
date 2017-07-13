@@ -27,7 +27,7 @@ class App extends Component {
         <Navbar />
         <Body {...this.props}/>
         <footer className="footer">
-          <div className="container">
+          <div className="container-fluid">
             <p className="text-muted">(c) 2017</p>
           </div>
         </footer>

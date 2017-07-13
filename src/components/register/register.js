@@ -96,6 +96,14 @@ export class Component extends React.Component {
               defaultValue={state.range}
             />
           </FormGroup>
+          <FormGroup>
+            <ControlLabel>Group</ControlLabel>
+            <FormControl
+              {...inputProps}
+              name="group"
+              defaultValue={state.group}
+            />
+          </FormGroup>
           {submit}
         </div>
       </form>
