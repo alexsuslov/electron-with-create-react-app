@@ -1,18 +1,29 @@
+/**
+ * App
+ */
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Navbar from './components/navbar/navbar';
+
+import Register from './components/register/register';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React/Electron</h2>
+      <div className="container-fluid">
+        <Navbar />
+        <div className="row">
+          <div className="col-md-8">body</div>
+          <div className="col-md-4">
+            <h4>Inspector</h4>
+            <Register />
+            </div>
         </div>
-        <p className="App-intro">
-          Hello Electron!
-        </p>
+        <footer className="footer">
+          <div className="container">
+            <p className="text-muted">(c) 2017</p>
+          </div>
+        </footer>
       </div>
     );
   }
