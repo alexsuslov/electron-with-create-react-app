@@ -7,17 +7,17 @@ import { connect } from 'react-redux';
 import Navbar from './components/navbar/navbar';
 
 import Register from './components/register/register';
+import Registers from './components/registers/registers';
 
 const Body = ({ inspector }) => {
   return inspector
-    ? <div className="row">
-      <div className="col-md-8">body</div>
-      <div className="col-md-4">
-        <h4>Inspector</h4>
+  ? <div className="row">
+      <div className="col-md-8"><Registers /></div>
+      <div className="col-md-4 bg-info">
         <Register />
       </div>
-    </div>
-    : <div className="row"><div className="col-md-12">body</div></div>;
+  </div>
+  : <div className="row"><div className="col-md-12"><Registers /></div></div>;
 };
 
 class App extends Component {
@@ -26,7 +26,6 @@ class App extends Component {
       <div className="container-fluid">
         <Navbar />
         <Body {...this.props}/>
-
         <footer className="footer">
           <div className="container">
             <p className="text-muted">(c) 2017</p>

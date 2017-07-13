@@ -3,6 +3,7 @@
  */
 import { createStore, combineReducers } from 'redux';
 import ux from './ux/';
+import registers from './registers/';
 
 function counter(state = 0, action) {
   switch (action.type) {
@@ -17,6 +18,6 @@ function counter(state = 0, action) {
 
 export default createStore(
 	combineReducers({
-    ux,
+    ux, registers,
   }), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
