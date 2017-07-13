@@ -3,8 +3,9 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 /*
         <NavItem eventKey={2} href="#">Link</NavItem>
@@ -17,28 +18,37 @@ import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
         </NavDropdown>
 */
 
+const handleInspector = ({ dispatch }) => {
+  return e => {
+    e.preventDefault();
+    dispatch({ type: 'inspector' });
+  };
+};
 
 const Component = props => {
-  return (<Navbar inverse collapseOnSelect>
-    <Navbar.Header>
-      <Navbar.Brand>
-        <a href="#">Modbus conf</a>
-      </Navbar.Brand>
-      <Navbar.Toggle />
-    </Navbar.Header>
-    <Navbar.Collapse>
-      <Nav>
-        <NavItem eventKey={1} href="#">Registers</NavItem>
+  return (
+    <Navbar inverse collapseOnSelect>
+      <Navbar.Header>
+        <Navbar.Brand>
+          <a href="#">Modbus conf</a>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+      </Navbar.Header>
+      <Navbar.Collapse>
+        <Nav>
+          <NavItem eventKey={1} href="#">Registers</NavItem>
 
-      </Nav>
-      <Nav pullRight>
-        <NavItem eventKey={2} href="#">Inspector</NavItem>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>);
+        </Nav>
+        <Nav pullRight>
+          <NavItem eventKey={2} href="#" onClick={handleInspector(props)}>
+            Inspector
+          </NavItem>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
 };
 
-Component.propTypes = {
-};
+Component.propTypes = {};
 
-export default Component;
+export default connect()(Component);

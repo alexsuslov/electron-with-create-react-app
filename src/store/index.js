@@ -2,6 +2,7 @@
  * Create redux store
  */
 import { createStore, combineReducers } from 'redux';
+import ux from './ux/';
 
 function counter(state = 0, action) {
   switch (action.type) {
@@ -16,7 +17,6 @@ function counter(state = 0, action) {
 
 export default createStore(
 	combineReducers({
-    counter,
-
-  })
+    ux,
+  }), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
