@@ -20,6 +20,7 @@ const Component = props => {
         <th>type</th>
         <th>Description</th>
         <th>Group</th>
+        <th>Mode</th>
         </tr>
       </thead>
       <tbody>

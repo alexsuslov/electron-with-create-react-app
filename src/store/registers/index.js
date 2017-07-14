@@ -8,6 +8,8 @@ const State = {
 
 function reducer(state = State, action) {
   switch (action.type) {
+    case 'REGISTERS_FILE':
+      return { ...state, items: action.payload };
     case 'REGISTERS_DEL':
       return { ...state, items: state.items.filter(v => v.id !== action.payload) };
 
