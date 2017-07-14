@@ -30,7 +30,7 @@ class App extends Component {
         <Body {...this.props}/>
         <footer className="footer">
           <div className="container-fluid">
-            <p className="text-muted">(c) 2017</p>
+            <p className="text-muted">(c) 2017 Corework</p>
           </div>
         </footer>
         <Loader />

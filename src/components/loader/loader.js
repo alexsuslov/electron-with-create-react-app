@@ -16,7 +16,7 @@ const handleChange = props => {
     const { files } = e.target;
     const reader = new FileReader();
     reader.onload = () => {
-      console.log(reader.result);
+      dispatch({ type: 'REGISTERS_FILE', payload: JSON.parse(reader.result)});
       dispatch({ type: 'LOADER' });
     };
     reader.readAsText(files[0]);
