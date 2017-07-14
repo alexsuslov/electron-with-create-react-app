@@ -44,7 +44,6 @@ const Component = props => {
 
           <Modal.Footer>
             <Button onClick={handleLoader(props)}>Cancel</Button>
-            <Button bsStyle="primary">Load</Button>
           </Modal.Footer>
         </Modal.Dialog>
       </div>
