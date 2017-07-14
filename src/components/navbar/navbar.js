@@ -25,6 +25,13 @@ const handleInspector = ({ dispatch }) => {
   };
 };
 
+export const handleLoader = ({ dispatch }) => {
+  return e => {
+    e.preventDefault();
+    dispatch({ type: 'LOADER' });
+  };
+};
+
 const Component = props => {
   return (
     <Navbar inverse collapseOnSelect>
@@ -36,7 +43,9 @@ const Component = props => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
-          <NavItem eventKey={1} href="#">Registers</NavItem>
+          <NavDropdown eventKey={3} title="Registers" id="basic-nav-dropdown">
+          <MenuItem eventKey={3.1} onClick={handleLoader(props)}>Load</MenuItem>
+        </NavDropdown>
 
         </Nav>
         <Nav pullRight>

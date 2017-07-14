@@ -9,6 +9,8 @@ import Navbar from './components/navbar/navbar';
 import Register from './components/register/register';
 import Registers from './components/registers/registers';
 
+import Loader from './components/loader/';
+
 const Body = ({ inspector }) => {
   return inspector
   ? <div className="row">
@@ -31,6 +33,7 @@ class App extends Component {
             <p className="text-muted">(c) 2017</p>
           </div>
         </footer>
+        <Loader />
       </div>
     );
   }
