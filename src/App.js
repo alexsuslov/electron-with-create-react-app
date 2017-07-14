@@ -15,7 +15,7 @@ const Body = ({ inspector }) => {
   return inspector
   ? <div className="row">
       <div className="col-md-8"><Registers /></div>
-      <div className="col-md-4 bg-info">
+      <div className="col-md-4">
         <Register />
       </div>
   </div>
@@ -23,6 +23,10 @@ const Body = ({ inspector }) => {
 };
 
 class App extends Component {
+  componentDidMount() {
+    const h = window.innerHeight
+  }
+
   render() {
     return (
       <div className="container-fluid">

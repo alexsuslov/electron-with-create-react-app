@@ -59,26 +59,18 @@ export class Component extends React.Component {
       autoComplete: 'off',
       onChange: this.handleChange,
     };
+    const style = {
+      position: 'absolute',
+      top: 32,
+      width: '90%',
+      padding: 16,
+    }
+
+
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="bg-info" style={style} onSubmit={this.handleSubmit}>
         <h3>{title}</h3>
         <div>
-          <FormGroup>
-            <ControlLabel>Description</ControlLabel>
-            <FormControl
-              {...inputProps}
-              name="desc"
-              defaultValue={state.desc}
-            />
-          </FormGroup>
-          <FormGroup>
-            <ControlLabel>Type</ControlLabel>
-            <FormControl
-              {...inputProps}
-              name="type"
-              defaultValue={state.type}
-            />
-          </FormGroup>
           <FormGroup>
             <ControlLabel>Address</ControlLabel>
             <FormControl
@@ -88,6 +80,34 @@ export class Component extends React.Component {
               defaultValue={state.addr}
             />
           </FormGroup>
+
+          <FormGroup>
+            <ControlLabel>Point ID</ControlLabel>
+            <FormControl
+              {...inputProps}
+              name="pointId"
+              defaultValue={state.pointId}
+            />
+          </FormGroup>
+
+          <FormGroup>
+            <ControlLabel>Description</ControlLabel>
+            <FormControl
+              {...inputProps}
+              name="desc"
+              defaultValue={state.desc}
+            />
+          </FormGroup>
+
+          <FormGroup>
+            <ControlLabel>Options/Range</ControlLabel>
+            <FormControl
+              {...inputProps}
+              name="options"
+              defaultValue={state.options}
+            />
+          </FormGroup>
+
           <FormGroup>
             <ControlLabel>Range</ControlLabel>
             <FormControl
@@ -96,6 +116,34 @@ export class Component extends React.Component {
               defaultValue={state.range}
             />
           </FormGroup>
+
+          <FormGroup>
+            <ControlLabel>Units</ControlLabel>
+            <FormControl
+              {...inputProps}
+              name="units"
+              defaultValue={state.units}
+            />
+          </FormGroup>
+
+          <FormGroup>
+            <ControlLabel>type</ControlLabel>
+            <FormControl
+              {...inputProps}
+              name="type"
+              defaultValue={state.type}
+            />
+          </FormGroup>
+
+          <FormGroup>
+            <ControlLabel>Permision</ControlLabel>
+            <FormControl
+              {...inputProps}
+              name="perm"
+              defaultValue={state.perm}
+            />
+          </FormGroup>
+
           <FormGroup>
             <ControlLabel>Group</ControlLabel>
             <FormControl
@@ -104,6 +152,15 @@ export class Component extends React.Component {
               defaultValue={state.group}
             />
           </FormGroup>
+          <FormGroup>
+            <ControlLabel>SubGroup</ControlLabel>
+            <FormControl
+              {...inputProps}
+              name="sub"
+              defaultValue={state.sub}
+            />
+          </FormGroup>
+
           {submit}
         </div>
       </form>
