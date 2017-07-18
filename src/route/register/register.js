@@ -4,15 +4,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Navbar from './components/navbar/navbar';
+import Navbar from '../../components//navbar/navbar';
 
-import Register from './components/register/register';
-import Registers from './components/registers/registers';
+import Register from '../../components/register/register';
+import Registers from '../../components/registers/registers';
 
-import Loader from './components/loader/';
+import Loader from '../../components/loader/';
 
 const Body = ({ inspector, h }) => {
-  console.log(h);
   const style={
       height: h - 128 || 768,
       overflow: 'scroll',

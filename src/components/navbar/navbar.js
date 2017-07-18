@@ -42,10 +42,7 @@ const Component = props => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
-          <NavDropdown eventKey={1} title="Modbus" id="modbus-nav-dropdown">
-
-            <MenuItem eventKey={1.1} data="MODBUS_LIST" {...propsItem}>List</MenuItem>
-          </NavDropdown>
+          <NavItem href="/modbus">Modbus</NavItem>
           <NavDropdown eventKey={3} title="Registers" id="basic-nav-dropdown">
             <MenuItem eventKey={3.1} data="LOADER" {...propsItem}>Load</MenuItem>
           </NavDropdown>
