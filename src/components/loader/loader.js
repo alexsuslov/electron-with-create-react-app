@@ -43,7 +43,7 @@ const Component = props => {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button onClick={handleLoader(props)}>Cancel</Button>
+            <Button data="LOADER" onClick={handleLoader(props)}>Cancel</Button>
           </Modal.Footer>
         </Modal.Dialog>
       </div>

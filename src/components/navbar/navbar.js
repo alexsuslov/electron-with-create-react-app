@@ -16,23 +16,22 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
           <MenuItem divider />
           <MenuItem eventKey={3.3}>Separated link</MenuItem>
         </NavDropdown>
-*/
 
-const handleInspector = ({ dispatch }) => {
-  return e => {
-    e.preventDefault();
-    dispatch({ type: 'inspector' });
-  };
-};
+  <MenuItem eventKey={1.1} data="MODBUS_ADD" {...propsItem}>Add</MenuItem>
+*/
 
 export const handleLoader = ({ dispatch }) => {
   return e => {
     e.preventDefault();
-    dispatch({ type: 'LOADER' });
+    const type = e.target.getAttribute('data');
+    dispatch({ type });
   };
 };
 
 const Component = props => {
+  const propsItem = {
+    onClick: handleLoader(props),
+  }
   return (
     <Navbar inverse collapseOnSelect>
       <Navbar.Header>
@@ -43,13 +42,16 @@ const Component = props => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
-          <NavDropdown eventKey={3} title="Registers" id="basic-nav-dropdown">
-          <MenuItem eventKey={3.1} onClick={handleLoader(props)}>Load</MenuItem>
-        </NavDropdown>
+          <NavDropdown eventKey={1} title="Modbus" id="modbus-nav-dropdown">
 
+            <MenuItem eventKey={1.1} data="MODBUS_LIST" {...propsItem}>List</MenuItem>
+          </NavDropdown>
+          <NavDropdown eventKey={3} title="Registers" id="basic-nav-dropdown">
+            <MenuItem eventKey={3.1} data="LOADER" {...propsItem}>Load</MenuItem>
+          </NavDropdown>
         </Nav>
         <Nav pullRight>
-          <NavItem eventKey={2} href="#" onClick={handleInspector(props)}>
+          <NavItem eventKey={2} href="#" type="inspector" {...propsItem}>
             Inspector
           </NavItem>
         </Nav>
